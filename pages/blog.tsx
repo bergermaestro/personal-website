@@ -27,3 +27,29 @@ const Blog = () => {
 }
 
 export default Blog
+
+
+export async function getStaticProps() {
+    // get posts from the API
+    // TODO: store this in an environment variable
+  
+    // const resPosts = await fetch('http://localhost:1337/api/posts');
+    // const resMainPage = await fetch('http://localhost:1337/api/main-page');
+  
+    const [resPosts, resMainPage] = await Promise.all([
+      fetch('http://localhost:1337/api/posts'), 
+    ]);
+  
+    // const posts = await resPosts.json();
+    // const mainPage = await resMainPage.json();
+    const [posts] = await Promise.all([
+      resPosts.json(), 
+    ]);
+  
+    return {
+      props: { 
+        posts
+    },
+    };
+  }
+  
