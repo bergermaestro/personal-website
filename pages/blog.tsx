@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import Spacer from "../components/Spacer"
-import Card from "../components/Card"
+import BlogCard from "../components/BlogCard"
 
 const Blog = () => {
     return (
@@ -14,11 +14,11 @@ const Blog = () => {
             <Nav/>
             <div className="max-w-5xl mx-auto">
                 <h1 className="text-4xl font-crete-round py-8">Blog</h1>
-                <Card/>
+                <BlogCard/>
                 <div className="h-8"/>
-                <Card/>
+                <BlogCard/>
                 <div className="h-8"/>
-                <Card/>
+                <BlogCard/>
                 <Spacer/>
             </div>
             <Footer/>

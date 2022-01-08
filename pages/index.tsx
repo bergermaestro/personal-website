@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Card from '../components/Card'
 import Nav from '../components/Nav'
 import Hero from '../components/Hero'
-import Section from '../components/Section'
+import BlogSection from '../components/BlogSection'
+import ProjectSection from '../components/ProjectSection'
 import Footer from '../components/Footer'
 import Image from 'next/image'
 import HeroImage from '../public/images/hero-image.png'
 import Spacer from '../components/Spacer'
+import GallerySection from '../components/GallerySection'
 
 function Home({posts, mainPage}) {
   // function Home({mainPage} : {mainPage:any}) {
@@ -32,13 +33,15 @@ function Home({posts, mainPage}) {
 
           <Spacer/>
 
-          <Section posts={posts} sectionInfo={mainPage.data.attributes.Section} sectionNumber="0" />
+          <ProjectSection posts={posts} sectionInfo={mainPage.data.attributes.Section} sectionNumber="0" />
 
           <Spacer/>
 
-          <Section posts={posts} sectionInfo={mainPage.data.attributes.Section} sectionNumber="1"/>
+          <BlogSection posts={posts} sectionInfo={mainPage.data.attributes.Section} sectionNumber="1"/>
 
           <Spacer/>
+
+          <GallerySection sectionInfo={mainPage.data.attributes.Section} sectionNumber="2"/>
         </div>
         <Footer/>
       </div>

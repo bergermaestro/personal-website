@@ -55,7 +55,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const {slug} = params;
 
-    console.log("SLUG:")
+    console.log("SLUG:")  
     console.log(slug)
 
     // const res = await fetch(`http://localhost:1337/posts?Slug=${slug}`);
