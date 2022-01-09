@@ -19,7 +19,7 @@ const ProjectSection = ({posts, sectionInfo, sectionNumber}) => {
           {/* loop over the posts and show them */}
             {posts && posts.data.slice(0,3).map((post) => (
               <div key={post.id} >
-                <ProjectCard title={post.attributes.title} summary={post.attributes.summary} image={post.attributes.image} slug={post.attributes.Slug}/>
+                <ProjectCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={post.attributes.Slug}/>
               </div>
 
             ))}

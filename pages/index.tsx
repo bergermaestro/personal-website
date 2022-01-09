@@ -42,6 +42,8 @@ function Home({posts, mainPage}) {
           <Spacer/>
 
           <GallerySection sectionInfo={mainPage.data.attributes.Section} sectionNumber="2"/>
+
+          <Spacer/>
         </div>
         <Footer/>
       </div>

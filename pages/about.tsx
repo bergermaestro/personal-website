@@ -2,6 +2,7 @@ import Head from "next/head"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import Spacer from "../components/Spacer"
+import ResumeCard from "../components/ResumeCard"
 
 const About = ({content}:any) => {
 
@@ -19,6 +20,8 @@ const About = ({content}:any) => {
                 <h1 className="text-4xl font-crete-round">{content.data.attributes.title}</h1>
                 <div className="h-8"></div>
                 <p>{content.data.attributes.content}</p>
+
+                <ResumeCard/>
 
                 <Spacer/>
             </div>

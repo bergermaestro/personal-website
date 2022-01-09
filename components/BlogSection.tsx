@@ -10,7 +10,7 @@ const BlogSection = ({posts, sectionInfo, sectionNumber}) => {
 
         {/* Left Section */}
         <div className="bg-default-900 basis-1/2">
-            <div className="px-8 py-12 space-y-4 bg-[url('../public/images/projects-background.png')] bg-contain bg-no-repeat bg-opacity-30">
+            <div className="px-8 py-12 space-y-4 bg-[url('../public/images/blog-background.png')] bg-contain bg-no-repeat bg-opacity-30">
             <h4 className="uppercase text-xl tracking-wider">{sectionInfo[parseInt(sectionNumber)].Name}</h4>
             <h2 className="font-bold text-4xl">{sectionInfo[parseInt(sectionNumber)].Title}</h2>
             <p className='w-3/4'>{sectionInfo[parseInt(sectionNumber)].Summary}</p>
@@ -26,7 +26,7 @@ const BlogSection = ({posts, sectionInfo, sectionNumber}) => {
               //   <h2>{post.attributes.title}</h2>
               // </div>
               <div key={post.id} >
-                <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={post.attributes.image} slug={post.attributes.Slug}/>
+                <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={post.attributes.Slug}/>
                 <div className='h-6'/>
               </div>
 
