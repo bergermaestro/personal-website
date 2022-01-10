@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { BsGithub, BsTwitter, BsLinkedin} from "react-icons/bs";
 import HeroImage from '../public/images/hero-image.png'
 
-const Hero = ({mainHeading, heroSummary}) => {
+const Hero = ({mainHeading, heroSummary}: {mainHeading:string, heroSummary:string}) => {
     return (
             <div className="flex flex-col-reverse md:flex-row mt-12">
                 <div className='basis-1/2 mt-0 md:mt-32'>

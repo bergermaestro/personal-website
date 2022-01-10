@@ -3,7 +3,7 @@ import BackgroundImage from '../public/images/projects-background.png'
 import BlogCard from "./BlogCard"
 import SolidButton from './Buttons/SolidButton'
 
-const BlogSection = ({posts, sectionInfo, sectionNumber}) => {
+const BlogSection = ({posts, sectionInfo, sectionNumber}: {posts:any, sectionInfo:string, sectionNumber:string}) => {
     
     return (
         <div className="flex flex-col md:flex-row items-center">
@@ -21,12 +21,12 @@ const BlogSection = ({posts, sectionInfo, sectionNumber}) => {
        {/* Right Section */}
         <div className='basis-1/2'>
           {/* loop over the posts and show them */}
-            {posts && posts.data.slice(0,2).map((post) => (
+            {posts && posts.data.slice(0,2).map((post:any) => (
               // <div key={post.id}>
               //   <h2>{post.attributes.title}</h2>
               // </div>
               <div key={post.id} >
-                <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={post.attributes.Slug}/>
+                <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={"blog/" + post.attributes.Slug}/>
                 <div className='h-6'/>
               </div>
 

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PlaceholderImage from '../public/images/placeholder-image.png'
 
-const BlogCard = ({title, summary, image, slug}) => {
+const BlogCard = ({title, summary, image, slug} : {title:string, summary:string, image:any, slug:string}) => {
     return (
             <a href={"./" + slug} className='bg-white text-default-400 rounded-lg shadow-lg flex flex-col md:flex-row transition transform hover:-translate-y-[0.25rem] hover:-translate-x-[-0.25rem] duration-300 motion-reduce:transition-none motion-reduce:transform-none'>
                 <div className='basis-5/12 bg-default-400'>

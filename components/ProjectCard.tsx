@@ -5,7 +5,7 @@ import OutlineButton from './Buttons/OutlineButton'
 import { BsGithub } from "react-icons/bs";
 import { RiComputerLine } from "react-icons/ri";
 
-const ProjectCard = ({title, summary, image, slug}) => {
+const ProjectCard = ({title, summary, image, slug} : {title:string, summary:string, image:any, slug:string}) => {
 
     console.log(image);
 

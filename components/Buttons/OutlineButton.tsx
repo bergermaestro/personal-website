@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { BsGithub } from 'react-icons/bs'
 
-const Button = ({text, icon, additionalProps}) => {
+const Button = ({text, icon, additionalProps} : {text:string, icon:any, additionalProps:string}) => {
     return (
         <Link href="./blog">
             <div className=''>

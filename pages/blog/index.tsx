@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Nav from "../components/Nav"
-import Footer from "../components/Footer"
-import Spacer from "../components/Spacer"
-import BlogCard from "../components/BlogCard"
+import Nav from "../../components/Nav"
+import Footer from "../../components/Footer"
+import Spacer from "../../components/Spacer"
+import BlogCard from "../../components/BlogCard"
 
 const Blog = ({posts}: {posts:any}) => {
     console.log(posts)
@@ -25,7 +25,7 @@ const Blog = ({posts}: {posts:any}) => {
 
                 {posts && posts.data.map((post) => (
                 <div key={post.id} className="mb-12">
-                  <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={post.attributes.Slug}/>
+                  <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={"blog/" + post.attributes.Slug}/>
                 </div>
 
               ))}

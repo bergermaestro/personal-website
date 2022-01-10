@@ -11,7 +11,7 @@ import Spacer from '../components/Spacer'
 import GallerySection from '../components/GallerySection'
 import SectionDivider from '../components/SectionDivider'
 
-function Home({posts, mainPage, projects}) {
+function Home({posts, mainPage, projects}: {posts:any, mainPage:any, projects:any}) {
   // function Home({mainPage} : {mainPage:any}) {
 // const Home: NextPage = ( {posts} : {posts:any}) => {
 

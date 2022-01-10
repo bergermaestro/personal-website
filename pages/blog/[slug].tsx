@@ -1,7 +1,7 @@
-import Footer from "../components/Footer"
-import Nav from "../components/Nav"
+import Footer from "../../components/Footer"
+import Nav from "../../components/Nav"
 import ReactMarkdown from "react-markdown"
-import Spacer from "../components/Spacer"
+import Spacer from "../../components/Spacer"
 
 const Post = ({post}:any) => {
 
@@ -42,7 +42,7 @@ export async function getStaticPaths() {
 //     resPosts.json(), 
 //   ]);
 
-  const paths = posts.data.map((post) => ({
+  const paths = posts.data.map((post:any) => ({
     params: { slug: post.attributes.Slug },
   }));
 
@@ -57,7 +57,7 @@ export async function getStaticPaths() {
 
 // for each individual page: get the data for that page
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params } : {params:any}) {
     const {slug} = params;
 
     console.log("SLUG:")  
