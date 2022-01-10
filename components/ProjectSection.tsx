@@ -15,11 +15,11 @@ const ProjectSection = ({posts, sectionInfo, sectionNumber}) => {
         </div>
        
        {/* Button Section */}
-        <div className='flex flex-col space-y-12 lg:flex-row lg:space-x-6 '>
+        <div className="flex flex-col space-y-12 lg:flex-row lg:space-x-6 items-baseline">
           {/* loop over the posts and show them */}
             {posts && posts.data.slice(0,3).map((post) => (
-              <div key={post.id} >
-                <ProjectCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={post.attributes.Slug}/>
+              <div key={post.id} className='basis-1/3'>
+                <ProjectCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={post.attributes.slug}/>
               </div>
 
             ))}
