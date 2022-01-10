@@ -13,7 +13,7 @@ const BlogSection = ({posts, sectionInfo, sectionNumber}) => {
             <div className="px-8 py-12 space-y-4 bg-[url('../public/images/blog-background.png')] bg-contain bg-no-repeat bg-opacity-30">
             <h4 className="uppercase text-xl tracking-wider">{sectionInfo[parseInt(sectionNumber)].Name}</h4>
             <h2 className="font-bold text-4xl">{sectionInfo[parseInt(sectionNumber)].Title}</h2>
-            <p className='w-3/4'>{sectionInfo[parseInt(sectionNumber)].Summary}</p>
+            <p className='w-3/4 text-lg lg:text-base'>{sectionInfo[parseInt(sectionNumber)].Summary}</p>
             <SolidButton text={sectionInfo[parseInt(sectionNumber)].ButtonText}/>
             </div>
         </div>

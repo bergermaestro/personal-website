@@ -17,7 +17,7 @@ const ProjectCard = ({title, summary, image, slug}) => {
                     </div>
                 <div className="p-6 basis-1/2">
                     <h3 className="text-3xl my-4 font-semibold">{title}</h3>
-                    <p>{summary}</p>
+                    <p className="text-lg lg:text-base">{summary}</p>
                     <div className='pt-0 my-0 group-hover:pt-4 group-hover:my-5 transition-all duration-300'>
                     <OutlineButton text="View on Github" icon={<BsGithub className='inline mr-3 text-2xl'/>} additionalProps="transition-all duration-300 my-0 opacity-0 h-0 group-hover:opacity-100 group-hover:h-full group-hover:my-3 group-hover:py-3 group-hover:px-4"/>
                     </div>

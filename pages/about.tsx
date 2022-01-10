@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Nav from "../components/Nav"
+import ReactMarkdown from "react-markdown"
 import Footer from "../components/Footer"
 import Spacer from "../components/Spacer"
 import ResumeCard from "../components/ResumeCard"
@@ -19,7 +20,7 @@ const About = ({content}:any) => {
             <div className="max-w-5xl mx-auto">
                 <h1 className="text-4xl font-crete-round">{content.data.attributes.title}</h1>
                 <div className="h-8"></div>
-                <p>{content.data.attributes.content}</p>
+                <ReactMarkdown className="prose prose-invert">{content.data.attributes.content}</ReactMarkdown>
 
                 <ResumeCard/>
 

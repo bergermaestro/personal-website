@@ -1,17 +1,22 @@
 import Footer from "../components/Footer"
 import Nav from "../components/Nav"
+import ReactMarkdown from "react-markdown"
+import Spacer from "../components/Spacer"
 
 const Post = ({post}:any) => {
 
-    console.log(post.title)
+    // console.log(post.title)
     return (
         <div className="text-white font-poppins">
             <Nav/>
             <div className="max-w-5xl mx-auto">
             <h1 className='text-5xl font-crete-round mb-6 leading-[1.2]'>{post.title}</h1>
             <h2>{post.date}</h2>
-            <p>{post.content}</p>
+            <article className="prose prose-invert prose-cyan">
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+            </article>
             </div>
+            <Spacer/>
             <Footer/>
         </div>
     )

@@ -4,7 +4,9 @@ import Footer from "../components/Footer"
 import Spacer from "../components/Spacer"
 import BlogCard from "../components/BlogCard"
 
-const Blog = () => {
+const Blog = ({posts}: {posts:any}) => {
+    console.log(posts)
+
     return (
         <div className="bg-default-400 text-white font-poppins">
             <Head>
@@ -14,11 +16,19 @@ const Blog = () => {
             <Nav/>
             <div className="max-w-5xl mx-auto">
                 <h1 className="text-4xl font-crete-round py-8">Blog</h1>
-                <BlogCard/>
+                {/* <BlogCard title="" summary="" image="" slug=""/>
                 <div className="h-8"/>
-                <BlogCard/>
+                <BlogCard />
                 <div className="h-8"/>
-                <BlogCard/>
+                <BlogCard/> */}
+
+
+                {posts && posts.data.map((post) => (
+                <div key={post.id} className="mb-12">
+                  <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={post.attributes.Slug}/>
+                </div>
+
+              ))}
                 <Spacer/>
             </div>
             <Footer/>
@@ -36,8 +46,8 @@ export async function getStaticProps() {
     // const resPosts = await fetch('http://localhost:1337/api/posts');
     // const resMainPage = await fetch('http://localhost:1337/api/main-page');
   
-    const [resPosts, resMainPage] = await Promise.all([
-      fetch('http://localhost:1337/api/posts'), 
+    const [resPosts] = await Promise.all([
+      fetch('http://localhost:1337/api/posts?populate=*'), 
     ]);
   
     // const posts = await resPosts.json();
