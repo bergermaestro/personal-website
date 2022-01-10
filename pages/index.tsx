@@ -11,7 +11,7 @@ import Spacer from '../components/Spacer'
 import GallerySection from '../components/GallerySection'
 import SectionDivider from '../components/SectionDivider'
 
-function Home({posts, mainPage}) {
+function Home({posts, mainPage, projects}) {
   // function Home({mainPage} : {mainPage:any}) {
 // const Home: NextPage = ( {posts} : {posts:any}) => {
 
@@ -34,7 +34,7 @@ function Home({posts, mainPage}) {
 
           <Spacer/>
 
-          <ProjectSection posts={posts} sectionInfo={mainPage.data.attributes.Section} sectionNumber="0" />
+          <ProjectSection posts={projects} sectionInfo={mainPage.data.attributes.Section} sectionNumber="0" />
 
           <SectionDivider direction={0}/>
 
@@ -60,22 +60,25 @@ export async function getStaticProps() {
   // const resPosts = await fetch('http://localhost:1337/api/posts');
   // const resMainPage = await fetch('http://localhost:1337/api/main-page');
 
-  const [resPosts, resMainPage] = await Promise.all([
+  const [resPosts, resMainPage, resProjects] = await Promise.all([
     fetch('http://localhost:1337/api/posts?populate=*'), 
-    fetch('http://localhost:1337/api/main-page?populate=*')
+    fetch('http://localhost:1337/api/main-page?populate=*'),
+    fetch('http://localhost:1337/api/projects?populate=*'), 
   ]);
 
   // const posts = await resPosts.json();
   // const mainPage = await resMainPage.json();
-  const [posts, mainPage] = await Promise.all([
+  const [posts, mainPage, projects] = await Promise.all([
     resPosts.json(), 
-    resMainPage.json()
+    resMainPage.json(),
+    resProjects.json()
   ]);
 
   return {
     props: { 
       posts, 
-      mainPage},
+      mainPage,
+      projects},
   };
 }
 
