@@ -9,6 +9,7 @@ import Image from 'next/image'
 import HeroImage from '../public/images/hero-image.png'
 import Spacer from '../components/Spacer'
 import GallerySection from '../components/GallerySection'
+import SectionDivider from '../components/SectionDivider'
 
 function Home({posts, mainPage}) {
   // function Home({mainPage} : {mainPage:any}) {
@@ -28,18 +29,18 @@ function Home({posts, mainPage}) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <Nav/>
-        <div className="max-w-5xl mx-auto">
+        <div className="px-14 lg:px-6 lg:max-w-5xl mx-auto">
           <Hero mainHeading={mainPage.data.attributes.mainHeading} heroSummary={mainPage.data.attributes.heroSummary}/>
 
           <Spacer/>
 
           <ProjectSection posts={posts} sectionInfo={mainPage.data.attributes.Section} sectionNumber="0" />
 
-          <Spacer/>
+          <SectionDivider direction={0}/>
 
           <BlogSection posts={posts} sectionInfo={mainPage.data.attributes.Section} sectionNumber="1"/>
 
-          <Spacer/>
+          <SectionDivider direction={1}/>
 
           <GallerySection sectionInfo={mainPage.data.attributes.Section} sectionNumber="2"/>
 

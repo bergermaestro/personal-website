@@ -5,7 +5,7 @@ import { FaHeart } from 'react-icons/fa'
 const Footer = () => {
     return (
         <div className='bg-gradient-to-t from-default-900'>
-            <div className='flex flex-row justify-between max-w-3xl mx-auto py-16'>
+            <div className='flex flex-col sm:flex-row mx-12 px-12 space-y-6 justify-between max-w-3xl md:mx-auto lg:px-0 py-16'>
                 <div>
                     <div className="mb-5"><Image src={Logo}/></div>  
                     <p>Design and Coded by</p>
@@ -15,7 +15,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <h5 className="text-2xl font-bold mb-4">Get in touch!</h5>
-                    <ul className='text-right space-y-2'>
+                    <ul className='md:text-right space-y-2'>
                         <li>Instagram</li>
                         <li>Email</li>
                         <li>Twitter</li>

@@ -6,7 +6,7 @@ import SolidButton from './Buttons/SolidButton'
 const BlogSection = ({posts, sectionInfo, sectionNumber}) => {
     
     return (
-        <div className="flex flex-row items-center">
+        <div className="flex flex-col md:flex-row items-center">
 
         {/* Left Section */}
         <div className="bg-default-900 basis-1/2">
