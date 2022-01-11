@@ -5,7 +5,6 @@ import Spacer from "../../components/Spacer"
 import BlogCard from "../../components/BlogCard"
 
 const Blog = ({posts}: {posts:any}) => {
-    console.log(posts)
 
     return (
         <div className="bg-default-400 text-white font-poppins">
@@ -23,7 +22,7 @@ const Blog = ({posts}: {posts:any}) => {
                 <BlogCard/> */}
 
 
-                {posts && posts.data.map((post) => (
+                {posts && posts.data.map((post:any) => (
                 <div key={post.id} className="mb-12">
                   <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={"blog/" + post.attributes.Slug}/>
                 </div>
@@ -47,7 +46,7 @@ export async function getStaticProps() {
     // const resMainPage = await fetch('http://localhost:1337/api/main-page');
   
     const [resPosts] = await Promise.all([
-      fetch('http://localhost:1337/api/posts?populate=*'), 
+      fetch(`${process.env.HOST}/api/posts?populate=*`), 
     ]);
   
     // const posts = await resPosts.json();

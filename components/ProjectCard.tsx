@@ -7,8 +7,6 @@ import { RiComputerLine } from "react-icons/ri";
 
 const ProjectCard = ({title, summary, image, slug} : {title:string, summary:string, image:any, slug:string}) => {
 
-    console.log(image);
-
     return (
             <a href={"./" + slug} className='group bg-white text-default-400 rounded-lg shadow-lg flex flex-col hover:translate-y-[-1.3rem] transition-all duration-300 motion-reduce:transition-none motion-reduce:transform-none'>
                     <div className="w-full h-56 relative">

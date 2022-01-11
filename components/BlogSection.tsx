@@ -3,7 +3,7 @@ import BackgroundImage from '../public/images/projects-background.png'
 import BlogCard from "./BlogCard"
 import SolidButton from './Buttons/SolidButton'
 
-const BlogSection = ({posts, sectionInfo, sectionNumber}: {posts:any, sectionInfo:string, sectionNumber:string}) => {
+const BlogSection = ({posts, sectionInfo, sectionNumber}: {posts:any, sectionInfo:any, sectionNumber:string}) => {
     
     return (
         <div className="flex flex-col md:flex-row items-center">
@@ -14,7 +14,7 @@ const BlogSection = ({posts, sectionInfo, sectionNumber}: {posts:any, sectionInf
             <h4 className="uppercase text-xl tracking-wider">{sectionInfo[parseInt(sectionNumber)].Name}</h4>
             <h2 className="font-bold text-4xl">{sectionInfo[parseInt(sectionNumber)].Title}</h2>
             <p className='w-3/4 text-lg lg:text-base'>{sectionInfo[parseInt(sectionNumber)].Summary}</p>
-            <SolidButton text={sectionInfo[parseInt(sectionNumber)].ButtonText}/>
+            <SolidButton text={sectionInfo[parseInt(sectionNumber)].ButtonText} path="./blog"/>
             </div>
         </div>
        

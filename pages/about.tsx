@@ -38,13 +38,12 @@ export default About
 
 export async function getStaticProps() {
     // get posts from the API
-    // TODO: store this in an environment variable
   
     // const resPosts = await fetch('http://localhost:1337/api/posts');
     // const resMainPage = await fetch('http://localhost:1337/api/main-page');
   
     const [resContent] = await Promise.all([
-      fetch('http://localhost:1337/api/about-page'), 
+      fetch(`${process.env.HOST}/api/about-page`), 
     ]);
   
     // const posts = await resPosts.json();

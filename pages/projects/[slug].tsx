@@ -31,7 +31,7 @@ export async function getStaticPaths() {
   // get posts from the API
   // TODO: store this in an environment variable
 
-  const res = await fetch(`http://localhost:1337/api/projects?populate=*`);
+  const res = await fetch(`${process.env.HOST}/api/projects?populate=*`);
   const posts = await res.json();
 
 //   const [resPosts] = await Promise.all([
@@ -64,7 +64,7 @@ export async function getStaticProps({ params } : {params:any}) {
     console.log(slug)
 
     // const res = await fetch(`http://localhost:1337/posts?Slug=${slug}`);
-    const res = await fetch(`http://localhost:1337/api/projects?filters[slug][$eq]=${slug}`);
+    const res = await fetch(`${process.env.HOST}/api/projects?filters[slug][$eq]=${slug}`);
 
     // console.log("RES:")
     // console.log(res)

@@ -1,6 +1,6 @@
 import ProjectCard from "./ProjectCard"
 
-const ProjectSection = ({posts, sectionInfo, sectionNumber} : {posts:any, sectionInfo:string, sectionNumber:string}) => {
+const ProjectSection = ({posts, sectionInfo, sectionNumber} : {posts:any, sectionInfo:any, sectionNumber:string}) => {
     
     return (
         <div className="flex flex-col">

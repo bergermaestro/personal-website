@@ -5,7 +5,6 @@ import Spacer from "../../components/Spacer"
 import BlogCard from "../../components/BlogCard"
 
 const Projects = ({posts}: {posts:any}) => {
-    console.log(posts)
 
     return (
         <div className="bg-default-400 text-white font-poppins">
@@ -47,7 +46,7 @@ export async function getStaticProps() {
     // const resMainPage = await fetch('http://localhost:1337/api/main-page');
   
     const [resPosts] = await Promise.all([
-      fetch('http://localhost:1337/api/projects?populate=*'), 
+      fetch(`${process.env.HOST}/api/projects?populate=*`), 
     ]);
   
     // const posts = await resPosts.json();

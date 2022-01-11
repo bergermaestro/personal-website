@@ -57,13 +57,17 @@ export async function getStaticProps() {
   // get posts from the API
   // TODO: store this in an environment variable
 
+  console.log(process.env.NEXT_PUBLIC_HOST)
+  console.log(process.env.HOST)
+
   // const resPosts = await fetch('http://localhost:1337/api/posts');
   // const resMainPage = await fetch('http://localhost:1337/api/main-page');
 
   const [resPosts, resMainPage, resProjects] = await Promise.all([
-    fetch('http://localhost:1337/api/posts?populate=*'), 
-    fetch('http://localhost:1337/api/main-page?populate=*'),
-    fetch('http://localhost:1337/api/projects?populate=*'), 
+    // fetch('http://localhost:1337/api/posts?populate=*'), 
+    fetch(`${process.env.HOST}/api/posts?populate=*`), 
+    fetch(`${process.env.HOST}/api/main-page?populate=*`),
+    fetch(`${process.env.HOST}/api/projects?populate=*`), 
   ]);
 
   // const posts = await resPosts.json();
