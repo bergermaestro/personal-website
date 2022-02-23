@@ -19,7 +19,7 @@ const ProjectCard = ({title, summary, image, slug, projectLinks} : {title:string
 
                 {/* loop over the posts and show them */}
                 {projectLinks && projectLinks.map((link:any) => (
-                    <div className='pt-0 my-0 group-hover:pt-4 group-hover:my-5 transition-all duration-300'>
+                    <div key={link.id} className='pt-0 my-0 group-hover:pt-4 group-hover:my-5 transition-all duration-300'>
                     {addIcon(link.url, link.displayText)}
                     </div>
                 ))}   

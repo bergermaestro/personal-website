@@ -30,7 +30,7 @@ const GalleryCard = ({images}:any) => {
                 
              {/* loop over the posts and show them */}
             {images && images.data.slice(0,9).map((image:any) => (
-                <Image src={image.attributes.photo.Image.data.attributes.url} width={image.attributes.photo.Image.data.attributes.width} height={image.attributes.photo.Image.data.attributes.height} objectFit='cover' className='rounded-md hover:-scale-[-0.25rem] duration-300 motion-reduce:transition-none motion-reduce:transform-none'/>
+                <Image key={image.id} src={image.attributes.photo.Image.data.attributes.url} width={image.attributes.photo.Image.data.attributes.width} height={image.attributes.photo.Image.data.attributes.height} objectFit='cover' className='rounded-md hover:-scale-[-0.25rem] duration-300 motion-reduce:transition-none motion-reduce:transform-none'/>
             ))}      
         </div>
     )
