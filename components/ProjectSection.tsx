@@ -19,7 +19,8 @@ const ProjectSection = ({posts, sectionInfo, sectionNumber} : {posts:any, sectio
           {/* loop over the posts and show them */}
             {posts && posts.data.slice(0,3).map((post:any) => (
               <div key={post.id} className='basis-1/3'>
-                <ProjectCard title={post.attributes.title} summary={post.attributes.summary} image={process.env.HOST + post.attributes.Image.data.attributes.url} slug={"projects/" + post.attributes.slug}/>
+                {/* <ProjectCard title={post.attributes.title} summary={post.attributes.summary} image="https://res.cloudinary.com/matthewberger/image/upload/v1645503517/106691377_1682772741875942_281587236741181828_n_cf38f7951c.jpg" slug={"projects/" + post.attributes.slug}/> */}
+                <ProjectCard title={post.attributes.title} summary={post.attributes.summary} image={post.attributes.Image.data.attributes.url} slug={"projects/" + post.attributes.slug} projectLinks={post.attributes.projectLinks}/>
                 {/* <ProjectCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={"projects/" + post.attributes.slug}/> */}
               </div>
 

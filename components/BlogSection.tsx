@@ -26,7 +26,7 @@ const BlogSection = ({posts, sectionInfo, sectionNumber}: {posts:any, sectionInf
               //   <h2>{post.attributes.title}</h2>
               // </div>
               <div key={post.id} >
-                <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={"blog/" + post.attributes.Slug}/>
+                <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={post.attributes.Image.data.attributes.url} slug={"blog/" + post.attributes.Slug}/>
                 <div className='h-6'/>
               </div>
 

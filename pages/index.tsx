@@ -11,7 +11,7 @@ import Spacer from '../components/Spacer'
 import GallerySection from '../components/GallerySection'
 import SectionDivider from '../components/SectionDivider'
 
-function Home({posts, mainPage, projects}: {posts:any, mainPage:any, projects:any}) {
+function Home({posts, mainPage, projects, images}: {posts:any, mainPage:any, projects:any, images:any}) {
   // function Home({mainPage} : {mainPage:any}) {
 // const Home: NextPage = ( {posts} : {posts:any}) => {
 
@@ -42,7 +42,7 @@ function Home({posts, mainPage, projects}: {posts:any, mainPage:any, projects:an
 
           <SectionDivider direction={1}/>
 
-          <GallerySection sectionInfo={mainPage.data.attributes.Section} sectionNumber="2"/>
+          <GallerySection posts={images} sectionInfo={mainPage.data.attributes.Section} sectionNumber="2"/>
 
           <Spacer/>
         </div>
@@ -55,34 +55,67 @@ export default Home
 
 export async function getStaticProps() {
   // get posts from the API
-  // TODO: store this in an environment variable
 
-  console.log(process.env.NEXT_PUBLIC_HOST)
-  console.log(process.env.HOST)
+  //console.log(process.env.NEXT_PUBLIC_HOST)
+ // console.log(process.env.HOST)
 
   // const resPosts = await fetch('http://localhost:1337/api/posts');
   // const resMainPage = await fetch('http://localhost:1337/api/main-page');
+  // const qs = require('qs');
+  // const query = qs.stringify({
+  //   populate: {
+  //     photo: {
+  //       populate: ['Image'],
+  //     }
+  //   } 
+  // }, {
+  //   encodeValuesOnly: true,
+  // });
 
-  const [resPosts, resMainPage, resProjects] = await Promise.all([
+  const qs = require('qs');
+  const query = qs.stringify({
+    populate: {
+      photo: {
+        populate: {
+          Image: {
+            populate: '*',
+          }
+        }
+      }
+    } 
+  }, {
+    encodeValuesOnly: true,
+  });
+
+
+  const [resPosts, resMainPage, resProjects, resImages] = await Promise.all([
     // fetch('http://localhost:1337/api/posts?populate=*'), 
     fetch(`${process.env.HOST}/api/posts?populate=*`), 
     fetch(`${process.env.HOST}/api/main-page?populate=*`),
+    // fetch(`${process.env.HOST}/api/projects?populate=*`), 
     fetch(`${process.env.HOST}/api/projects?populate=*`), 
+    fetch(`${process.env.HOST}/api/galleries?${query}`), 
   ]);
 
   // const posts = await resPosts.json();
   // const mainPage = await resMainPage.json();
-  const [posts, mainPage, projects] = await Promise.all([
+  const [posts, mainPage, projects, images] = await Promise.all([
     resPosts.json(), 
     resMainPage.json(),
-    resProjects.json()
+    resProjects.json(),
+    resImages.json(), 
   ]);
 
   return {
     props: { 
       posts, 
       mainPage,
-      projects},
+      projects,
+      images},
   };
 }
+
+
+
+
 

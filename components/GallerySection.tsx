@@ -1,7 +1,7 @@
 import GalleryCard from './GalleryCard'
 import SolidButton from './Buttons/SolidButton'
 
-const GallerySection = ({sectionInfo, sectionNumber}: {sectionInfo:any, sectionNumber:string}) => {
+const GallerySection = ({posts, sectionInfo, sectionNumber}: {posts:any, sectionInfo:any, sectionNumber:string}) => {
     
     return (
         <div className="flex flex-col md:flex-row items-center">
@@ -10,7 +10,7 @@ const GallerySection = ({sectionInfo, sectionNumber}: {sectionInfo:any, sectionN
        
        {/* Left Section */}
         <div className='basis-1/2'>
-            <GalleryCard/>
+            <GalleryCard images={posts}/>
         </div>
 
         {/* Right Section */}
