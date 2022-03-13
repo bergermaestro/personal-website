@@ -13,7 +13,7 @@ const Blog = ({posts}: {posts:any}) => {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <Nav/>
-            <div className="max-w-5xl mx-auto">
+            <div className="px-6 md:px-14 lg:px-6 lg:max-w-5xl mx-auto">
                 <h1 className="text-4xl font-crete-round py-8">Blog</h1>
                 {/* <BlogCard title="" summary="" image="" slug=""/>
                 <div className="h-8"/>

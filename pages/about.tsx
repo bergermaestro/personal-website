@@ -17,7 +17,7 @@ const About = ({content}:any) => {
         </Head>
 
             <Nav/>
-            <div className="max-w-5xl mx-auto">
+            <div className="px-6 md:px-14 lg:px-6 lg:max-w-5xl mx-auto">
                 <h1 className="text-4xl font-crete-round">{content.data.attributes.title}</h1>
                 <div className="h-8"></div>
                 <ReactMarkdown className="prose prose-invert">{content.data.attributes.content}</ReactMarkdown>

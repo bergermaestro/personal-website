@@ -10,7 +10,7 @@ const ProjectSection = ({posts, sectionInfo, sectionNumber} : {posts:any, sectio
             <h4 className="uppercase text-xl tracking-wider">{sectionInfo[parseInt(sectionNumber)].Name}</h4>
             <div className="flex flex-col space-y-4 md:flex-row pb-12 pt-3 md:space-x-4 max-w-2xl">
                 <h2 className="font-bold text-4xl basis-1/2">{sectionInfo[parseInt(sectionNumber)].Title}</h2>
-                <p className='text-lg lg:text-sm basis-1/2'>{sectionInfo[parseInt(sectionNumber)].Summary}</p>
+                <p className='md:w-3/4 text-md md:text-lg basis-1/2'>{sectionInfo[parseInt(sectionNumber)].Summary}</p>
         </div>
         </div>
        

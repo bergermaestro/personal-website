@@ -29,7 +29,7 @@ function Home({posts, mainPage, projects, images}: {posts:any, mainPage:any, pro
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <Nav/>
-        <div className="px-14 lg:px-6 lg:max-w-5xl mx-auto">
+        <div className="px-6 md:px-14 lg:px-6 lg:max-w-5xl mx-auto">
           <Hero mainHeading={mainPage.data.attributes.mainHeading} heroSummary={mainPage.data.attributes.heroSummary}/>
 
           <Spacer/>

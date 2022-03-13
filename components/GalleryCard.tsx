@@ -3,7 +3,7 @@ import PlaceholderImage from '../public/images/placeholder-image.png'
 
 const GalleryCard = ({images}:any) => {
     return (
-        <div className='bg-white text-default-400 rounded-lg shadow-lg grid grid-cols-3 grid-rows-3 gap-3 p-3 aspect-square'>
+        <div className='bg-white text-default-400 rounded-lg shadow-lg grid grid-cols-3 grid-rows-3 gap-2 p-2 lg:gap-3 lg:p-3 aspect-square'>
 
                 {/* {console.log(images.data)} */}
                 {/* loop over the images and show them */}

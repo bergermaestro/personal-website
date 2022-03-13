@@ -15,7 +15,7 @@ const ProjectCard = ({title, summary, image, slug, projectLinks} : {title:string
                     </div>
                 <div className="p-6 basis-1/2">
                     <h3 className="text-3xl my-4 font-semibold">{title}</h3>
-                    <p className="text-lg lg:text-base">{summary}</p>
+                    <p className="text-md md:text-lg lg:text-base">{summary}</p>
 
                 {/* loop over the posts and show them */}
                 {projectLinks && projectLinks.map((link:any) => (
