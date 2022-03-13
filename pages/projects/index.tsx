@@ -24,7 +24,7 @@ const Projects = ({posts}: {posts:any}) => {
 
                 {posts && posts.data.map((post:any) => (
                 <div key={post.id} className="mb-12">
-                  <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={"http://localhost:1337" + post.attributes.Image.data.attributes.url} slug={"projects/" + post.attributes.Slug}/>
+                  <BlogCard title={post.attributes.title} summary={post.attributes.summary} image={post.attributes.Image.data.attributes.url} slug={"projects/" + post.attributes.slug}/>
                 </div>
 
               ))}

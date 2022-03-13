@@ -12,6 +12,11 @@ const Post = ({post}:any) => {
             <div className="max-w-5xl mx-auto">
             <h1 className='text-5xl font-crete-round mb-6 leading-[1.2]'>{post.title}</h1>
             <h2>{post.date}</h2>
+
+            {post.technologies.map((technology:String) => (
+              <p>{technology}</p>
+            ))}
+
             <article className="prose prose-invert prose-cyan">
             <ReactMarkdown>{post.content}</ReactMarkdown>
             </article>
@@ -45,6 +50,9 @@ export async function getStaticPaths() {
   const paths = posts.data.map((post:any) => ({
     params: { slug: post.attributes.slug },
   }));
+
+  console.log("PATHS:")  
+  console.log(paths)
 
 //   console.log("PATHS:")
 //   console.log(paths)
