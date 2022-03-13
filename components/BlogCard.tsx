@@ -11,7 +11,7 @@ const BlogCard = ({title, summary, image, slug} : {title:string, summary:string,
                     </div>
                 </div>
                 <div className="p-6 basis-7/12">
-                <span className='tracking-wider bg-brandTeal rounded-lg my-2 px-2 py-1'>lifestyle</span>
+                {/* <span className='tracking-wider bg-brandTeal rounded-lg my-2 px-2 py-1'>lifestyle</span> */}
                 <h3 className="text-3xl my-4 font-semibold">{title}</h3>
                 <p className="text-lg lg:text-base">{summary}</p>
                 </div>

@@ -10,8 +10,11 @@ const Post = ({post}:any) => {
         <div className="text-white font-poppins">
             <Nav/>
             <div className="max-w-5xl mx-auto">
-            <h1 className='text-5xl font-crete-round mb-6 leading-[1.2]'>{post.title}</h1>
-            <h2>{post.date}</h2>
+            <h1 className='text-5xl font-crete-round mb-1 mt-12 leading-[1.2]'>{post.title}</h1>
+            <h2 className="text-1xl mb-6">{post.date}</h2>
+
+
+
             <article className="prose prose-invert prose-cyan">
             <ReactMarkdown>{post.content}</ReactMarkdown>
             </article>

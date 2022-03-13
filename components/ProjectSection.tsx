@@ -15,7 +15,7 @@ const ProjectSection = ({posts, sectionInfo, sectionNumber} : {posts:any, sectio
         </div>
        
        {/* Button Section */}
-        <div className="flex flex-col space-y-12 lg:flex-row lg:space-x-6 items-baseline">
+        <div className="flex flex-col space-y-12 lg:flex-row lg:space-x-6 lg:items-baseline lg:h-[36em]">
           {/* loop over the posts and show them */}
             {posts && posts.data.slice(0,3).map((post:any) => (
               <div key={post.id} className='basis-1/3'>

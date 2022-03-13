@@ -10,14 +10,16 @@ const Post = ({post}:any) => {
         <div className="text-white font-poppins">
             <Nav/>
             <div className="max-w-5xl mx-auto">
-            <h1 className='text-5xl font-crete-round mb-6 leading-[1.2]'>{post.title}</h1>
-            <h2>{post.date}</h2>
+            <h1 className='text-5xl font-crete-round mb-1 mt-12 leading-[1.2]'>{post.title}</h1>
+            <h2 className="text-1xl mb-6">{post.date}</h2>
 
-            {post.technologies.map((technology:String) => (
-              <p>{technology}</p>
-            ))}
+            <div className="flex flex-row">
+            {post.technologies.map((technology:any) => (
+              <a className="p-2 mr-4 my-2 bg-brandTeal rounded-md" key={technology.id}>{technology.tag}</a>
+              ))}
+            </div>
 
-            <article className="prose prose-invert prose-cyan">
+            <article className="pt-12 prose prose-invert prose-cyan">
             <ReactMarkdown>{post.content}</ReactMarkdown>
             </article>
             </div>
@@ -51,8 +53,8 @@ export async function getStaticPaths() {
     params: { slug: post.attributes.slug },
   }));
 
-  console.log("PATHS:")  
-  console.log(paths)
+  //console.log("PATHS:")  
+  //console.log(paths)
 
 //   console.log("PATHS:")
 //   console.log(paths)
@@ -68,11 +70,11 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params } : {params:any}) {
     const {slug} = params;
 
-    console.log("SLUG:")  
-    console.log(slug)
+    //console.log("SLUG:")  
+    //console.log(slug)
 
     // const res = await fetch(`http://localhost:1337/posts?Slug=${slug}`);
-    const res = await fetch(`${process.env.HOST}/api/projects?filters[slug][$eq]=${slug}`);
+    const res = await fetch(`${process.env.HOST}/api/projects?filters[slug][$eq]=${slug}&populate=*`);
 
     // console.log("RES:")
     // console.log(res)

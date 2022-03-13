@@ -87,6 +87,8 @@ export async function getStaticProps() {
     encodeValuesOnly: true,
   });
 
+  console.log(query)
+
 
   const [resPosts, resMainPage, resProjects, resImages] = await Promise.all([
     // fetch('http://localhost:1337/api/posts?populate=*'), 
