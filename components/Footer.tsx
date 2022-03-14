@@ -18,10 +18,10 @@ const Footer = () => {
                 <div>
                     <h5 className="text-2xl font-bold mb-4 hidden sm:block">Get in touch!</h5>
                     <ul className='flex flex-row sm:flex-col md:text-right sm:space-y-2 justify-between mt-12 sm:mt-0'>
-                        <li>Instagram</li>
-                        <li>Email</li>
-                        <li>Twitter</li>
-                        <li>Github</li>
+                    <li><a className=" hover:text-brandTeal transition-all" href="https://twitter.com/itsmattberger" target="_blank" rel="noreferrer"> Twitter</a></li>
+                            <li><a className=" hover:text-brandTeal transition-all" href="https://github.com/bergermaestro" target="_blank" rel="noreferrer"> Github</a></li>
+                            <li><a className=" hover:text-brandTeal transition-all" href="https://www.linkedin.com/in/matthewaberger/" target="_blank" rel="noreferrer"> LinkedIn</a></li>
+                            <li><a className=" hover:text-brandTeal transition-all" href="mailto:matthew17berger@gmail.com" target="_blank" rel="noreferrer"> Email</a></li>
                     </ul>  
                 </div>
             </div>

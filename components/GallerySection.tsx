@@ -4,7 +4,7 @@ import SolidButton from './Buttons/SolidButton'
 const GallerySection = ({posts, sectionInfo, sectionNumber}: {posts:any, sectionInfo:any, sectionNumber:string}) => {
     
     return (
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col-reverse md:flex-row items-center">
 
 
        

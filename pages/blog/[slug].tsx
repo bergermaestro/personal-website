@@ -9,7 +9,7 @@ const Post = ({post}:any) => {
     return (
         <div className="text-white font-poppins">
             <Nav/>
-            <div className="max-w-5xl mx-auto">
+            <div className="px-6 md:px-14 lg:px-6 lg:max-w-5xl mx-auto">
             <h1 className='text-5xl font-crete-round mb-1 mt-12 leading-[1.2]'>{post.title}</h1>
             <h2 className="text-1xl mb-6">{post.date}</h2>
 
@@ -63,8 +63,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params } : {params:any}) {
     const {slug} = params;
 
-    console.log("SLUG:")  
-    console.log(slug)
+    //console.log("SLUG:")  
+    //console.log(slug)
 
     // const res = await fetch(`http://localhost:1337/posts?Slug=${slug}`);
     const res = await fetch(`${process.env.HOST}/api/posts?filters[slug][$eq]=${slug}`);
@@ -79,8 +79,8 @@ export async function getStaticProps({ params } : {params:any}) {
 
     const post = data[0].attributes;
 
-    console.log("POST:")
-    console.log(post)
+    //console.log("POST:")
+    //console.log(post)
 
     return {
         props: { post },
