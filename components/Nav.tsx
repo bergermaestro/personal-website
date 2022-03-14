@@ -6,9 +6,9 @@ const Nav = () => {
     return (
             <nav className="py-6 bg-gradient-to-b from-default-900">
                 <div className="px-6 md:px-14 lg:px-6 lg:max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center">   
-                    <a href="/">
+                    <Link href="/">
                         <Image src={NavImage}/>
-                    </a>
+                    </Link>
                     <div className='flex flex-row space-x-12 uppercase text-lg items-center'>
                         <Link href="/"><a className='hover:text-brandTeal transition-all'>Home</a></Link>
                         <Link href="/about"><a className='hover:text-brandTeal transition-all'>About</a></Link>
