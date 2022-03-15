@@ -21,7 +21,7 @@ const Hero = ({mainHeading, heroSummary}: {mainHeading:string, heroSummary:strin
                         </ul>
                 </div>
                 <div className='basis-1/2 md:pl-12 px-8 mx-auto'>
-                    <Image src={HeroImage} className='mx-auto'/>
+                    <Image src={HeroImage} alt="A navy blue tower with conveyor belts holding hamburgers passing through it" className='mx-auto'/>
                 </div>
             </div>
     )

@@ -8,7 +8,7 @@ const Nav = () => {
                 <div className="px-6 md:px-14 lg:px-6 lg:max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center">   
                     <span className="pb-3 sm:py-0 cursor-pointer">
                     <Link href="/">
-                        <Image src={NavImage}/>
+                        <Image src={NavImage} alt="Logo of an orange M and a blue B"/>
                     </Link>
                     </span>
                     <div className='flex flex-row sm:space-x-12 uppercase text-lg items-center justify-between w-full sm:w-auto sm:justify-center'>
