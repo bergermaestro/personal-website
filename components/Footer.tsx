@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className='flex flex-row sm:flex-col justify-between'>
                     <div className="mb-5"><Image src={Logo}/></div> 
                     <div>
-                        <p>Design and Coded by</p>
+                        <p>Designed and Developed by</p>
                         <p>Matthew Berger</p>
                         <div className="h-6"/>
                         <div className='inline'>Made with <FaHeart className='inline'/> in Toronto</div>
